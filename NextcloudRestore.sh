@@ -3,18 +3,16 @@
 #
 # Bash script for restoring backups of Nextcloud.
 #
-# Version 2.1.2
-#
 # Usage:
 #   - With backup directory specified in the script: ./NextcloudRestore.sh <BackupName> (e.g. ./NextcloudRestore.sh 20170910_132703)
 #   - With backup directory specified by parameter: ./NextcloudRestore.sh <BackupName> <BackupDirectory> (e.g. ./NextcloudRestore.sh 20170910_132703 /media/hdd/nextcloud_backup)
 #
-# The script is based on an installation of Nextcloud using nginx and MariaDB, see https://decatec.de/home-server/nextcloud-auf-ubuntu-server-18-04-lts-mit-nginx-mariadb-php-lets-encrypt-redis-und-fail2ban/
+# The script is based on my specific installation of Nextcloud using Apache2 and PostgreSQL but should work with nginx and/or MariaDB/MySQL as well.
 #
 
 #
 # IMPORTANT
-# You have to customize this script (directories, users, etc.) for your actual environment.
+# You'll have to customize this script (directories, users, etc.) to match your own specific environment.
 # All entries which need to be customized are tagged with "TODO".
 #
 
@@ -46,13 +44,13 @@ nextcloudDataDir='/var/nextcloud_data'
 #nextcloudLocalExternalDataDir='/var/nextcloud_external_data'
 
 # TODO: The service name of the web server. Used to start/stop web server (e.g. 'systemctl start <webserverServiceName>')
-webserverServiceName='nginx'
+webserverServiceName='apache2'
 
 # TODO: Your web server user
 webserverUser='www-data'
 
 # TODO: The name of the database system (one of: mysql, mariadb, postgresql)
-databaseSystem='mariadb'
+databaseSystem='postgresql'
 
 # TODO: Your Nextcloud database name
 nextcloudDatabase='nextcloud_db'
@@ -61,7 +59,7 @@ nextcloudDatabase='nextcloud_db'
 dbUser='nextcloud_db_user'
 
 # TODO: The password of the Nextcloud database user
-dbPassword='mYpAsSw0rd'
+dbPassword='changethistosuityourpassword'
 
 # File names for backup files
 # If you prefer other file names, you'll also have to change the NextcloudBackup.sh script.
