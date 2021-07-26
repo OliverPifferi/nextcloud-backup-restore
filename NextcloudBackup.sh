@@ -14,7 +14,7 @@
 
 #
 # IMPORTANT
-# You have to customize this script (directories, users, etc.) for your actual environment.
+# You'll have to customize this script (directories, users, etc.) to match your own specific environment.
 # All entries which need to be customized are tagged with "TODO".
 #
 
