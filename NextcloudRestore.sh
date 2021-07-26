@@ -59,7 +59,7 @@ nextcloudDatabase='nextcloud_db'
 dbUser='nextcloud_db_user'
 
 # TODO: The password of the Nextcloud database user
-dbPassword='changethistosuityourpassword'
+dbPassword='changethistomatchyourpassword'
 
 # File names for backup files
 # If you prefer other file names, you'll also have to change the NextcloudBackup.sh script.
