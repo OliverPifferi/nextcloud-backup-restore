@@ -9,7 +9,7 @@
 # 	- With backup directory specified in the script:  ./NextcloudBackup.sh
 # 	- With backup directory specified by parameter: ./NextcloudBackup.sh <BackupDirectory> (e.g. ./NextcloudBackup.sh /media/hdd/nextcloud_backup)
 #
-# The script is based on an installation of Nextcloud using nginx and MariaDB, see https://decatec.de/home-server/nextcloud-auf-ubuntu-server-18-04-lts-mit-nginx-mariadb-php-lets-encrypt-redis-und-fail2ban/
+# The script is based on my specific installation of Nextcloud using Apache2 and PostgreSQL but should work with nginx and/or MariaDB/MySQL as well.
 #
 
 #
@@ -51,13 +51,13 @@ nextcloudDataDir='/var/nextcloud_data'
 #nextcloudLocalExternalDataDir='/var/nextcloud_external_data'
 
 # TODO: The service name of the web server. Used to start/stop web server (e.g. 'systemctl start <webserverServiceName>')
-webserverServiceName='nginx'
+webserverServiceName='apache2'
 
 # TODO: Your web server user
 webserverUser='www-data'
 
 # TODO: The name of the database system (one of: mysql, mariadb, postgresql)
-databaseSystem='mariadb'
+databaseSystem='postgresql'
 
 # TODO: Your Nextcloud database name
 nextcloudDatabase='nextcloud_db'
@@ -66,10 +66,10 @@ nextcloudDatabase='nextcloud_db'
 dbUser='nextcloud_db_user'
 
 # TODO: The password of the Nextcloud database user
-dbPassword='mYpAsSw0rd'
+dbPassword='changethistomatchyourpassword'
 
 # TODO: The maximum number of backups to keep (when set to 0, all backups are kept)
-maxNrOfBackups=0
+maxNrOfBackups=3
 
 # TODO: Ignore updater's backup directory in the data directory to save space
 # Set to true to ignore the backup directory
